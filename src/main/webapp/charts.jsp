@@ -56,7 +56,7 @@
             <span>Charts</span></a>
         </li>
 
-        <li id="tables" onclick="tablesclick()" class="nav-item">
+        <li id="tables" class="nav-item">
           <a class="nav-link" href="datatable.jsp">
             <i class="fas fa-fw fa-table"></i>
             <span >Tables</span></a>

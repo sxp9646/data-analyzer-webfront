@@ -170,7 +170,7 @@ public class DBDAServicePort implements IDBDAServicePort {
 	@Path("/login")
 	public Response loginWithInfoFromForm(@FormParam("usr") String usr, @FormParam("pwd") String pwd)
 			throws SQLException {
-		System.out.println(usr + pwd);
+		System.out.println("jhsru98tydrhy89serdtpy89dtrsepy89serhp789srhtp789dtr"+usr + pwd);
 		initialization();
 		String result = userController.verifyLoginDetails(con, usr, pwd);
 
@@ -208,6 +208,31 @@ public class DBDAServicePort implements IDBDAServicePort {
 			return Response.status(400).entity(new SimpleJsonMessage("User could not be found")).build();
 
 	}
+	@GET
+	@Path("/ibs")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getIBS( @PathParam("tableName")String name,
+            @PathParam("filters")String filters)
+			throws SQLException {
+		// System.out.println(usr + pwd);
+		 initialization();
+
+		// String result = userController.verifyLoginDetails(con, usr, pwd);
+		System.out.println("table info called ");
+		Statement stmt = con.createStatement();
+		
+		ArrayList<ArrayList<String>> table = correlationDealInstr(stmt);
+		if (table != null) {
+			return Response.ok(table, MediaType.APPLICATION_JSON_TYPE).build();
+
+			// return Response.status(200).entity(new User(usr, pwd)).build();
+
+		} else
+			return Response.status(400).entity(new SimpleJsonMessage("User could not be found")).build();
+
+	}
+	
 	
 	@Override
 	@POST
@@ -282,7 +307,30 @@ public class DBDAServicePort implements IDBDAServicePort {
 		}
 		return ret;
 	}
-
+	public static ArrayList<ArrayList<String>> correlationDealInstr( Statement stmt) throws SQLException {
+		ArrayList<ArrayList<String>> ret = new ArrayList<ArrayList<String>>();
+		String query = "select " + 
+				"i.instrument_name, " +
+				"d.deal_type, " +
+				"sum(d.deal_amount * d.deal_quantity) " +
+				"from " + SCHEMANAME + "deal as d " +
+				"inner join " + SCHEMANAME + "instrument as i " +
+				"on d.deal_instrument_id = i.instrument_id " +
+				"group by 1, 2 "+
+				"order by 1, 2";
+		//System.out.println(query);
+		ResultSet rs = stmt.executeQuery(query);
+		ResultSetMetaData md = rs.getMetaData();
+		int len = md.getColumnCount();
+		while(rs.next()) {
+			ArrayList<String> row = new ArrayList<String>();
+			for (int i = 1; i <= len; ++i) {
+				row.add(rs.getString(i));
+			}
+			ret.add(row);
+		}
+		return ret;
+	}
 	/*
 	 * Example
 	 * 
