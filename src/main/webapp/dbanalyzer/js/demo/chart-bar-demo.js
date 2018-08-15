@@ -7,33 +7,45 @@ var ctx = document.getElementById("myBarChart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["Astronomica", "Deuteronic", "Floral", "Galactic","Celestrial","Heliosphere","Jupiter","Interstella","Koronis","Eclipse","Borealis","Lunatic"],
     datasets: [{
-      label: "Revenue",
+      label: "Total Long Postion",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
-    }],
+      // This needs to be set up so that it uses data from database
+      data: [4440, 5312, 6251, 7841, 9821, 6984,1000,4000,3000,4200,9000,1500],
+    },
+    {
+      label: "Total Short Position",
+      backgroundColor: "rgba(100,217,216,1)",
+      borderColor: "rgba(100,117,216,1)",
+      // This needs to be set up so that it uses data from database
+      data: [8840, 5312, 6251, 7841, 9821, 6984,1000,4000,3000,4200,9000,1500],
+    }
+  
+  ],
   },
   options: {
     scales: {
       xAxes: [{
         time: {
-          unit: 'month'
+          unit: 'company'
         },
+      //  stacked: true,
         gridLines: {
           display: false
         },
         ticks: {
-          maxTicksLimit: 6
+          maxTicksLimit: 12
         }
       }],
       yAxes: [{
         ticks: {
           min: 0,
-          max: 15000,
+          max: 12000,
           maxTicksLimit: 5
         },
+    //    stacked: true,
         gridLines: {
           display: true
         }

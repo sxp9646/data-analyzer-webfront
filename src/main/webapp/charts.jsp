@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>dbRobinhood</title>
+    <title>dbIS</title>
 
     <!-- Bootstrap core CSS-->
     <link href="dbanalyzer/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,11 +29,8 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">dbRobinhood</a>
+      <a class="navbar-brand mr-1" href="index.html">dbIS</a>
 
-      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-        <i class="fas fa-bars"></i>
-      </button>
 
 
       <!-- Navbar -->
@@ -49,12 +46,12 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
+            <span>Markets</span>
           </a>
         </li>
 
         <li class="nav-item active">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="charts.jsp">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
         </li>
@@ -70,23 +67,16 @@
 
         <div class="container-fluid">
 
-          <!-- Breadcrumbs-->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="#">Dashboard</a>
-            </li>
-            <li class="breadcrumb-item active">Charts</li>
-          </ol>
 
           <!-- Area Chart Example-->
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-chart-area"></i>
-              Area Chart Example</div>
+              Portfolio Value</div>
             <div class="card-body">
               <canvas id="myAreaChart" width="100%" height="30"></canvas>
             </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        
           </div>
 
           <div class="row">
@@ -94,29 +84,24 @@
               <div class="card mb-3">
                 <div class="card-header">
                   <i class="fas fa-chart-bar"></i>
-                  Bar Chart Example</div>
+                  Portfolio Composition </div>
                 <div class="card-body">
                   <canvas id="myBarChart" width="100%" height="50"></canvas>
                 </div>
-                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+         
               </div>
             </div>
             <div class="col-lg-4">
               <div class="card mb-3">
                 <div class="card-header">
                   <i class="fas fa-chart-pie"></i>
-                  Pie Chart Example</div>
+                  Investor Sentiment </div>
                 <div class="card-body">
                   <canvas id="myPieChart" width="100%" height="100"></canvas>
                 </div>
-                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-              </div>
             </div>
           </div>
 
-          <p class="small text-center text-muted my-5">
-            <em>More chart examples coming soon...</em>
-          </p>
 
         </div>
         <!-- /.container-fluid -->
@@ -125,7 +110,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © Your Website 2018</span>
+              <span>Copyright © 2018 Deutsche Bank AG</span>
             </div>
           </div>
         </footer>
