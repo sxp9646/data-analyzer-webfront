@@ -1,14 +1,14 @@
 var rootURL = "rws/services";
 
 //getAllLinksAndTags();
-$.ajax({
-	method: 'GET',
-	url: rootURL+'/',
-	dataType: "json", // data type of response
-	success : function(data) {
-		console.log(data);
-	}
-});
+//$.ajax({
+//	method: 'GET',
+//	url: rootURL+'/',
+//	dataType: "json", // data type of response
+//	success : function(data) {
+//		console.log(data);
+//	}
+//});
 function getAllLinksAndTags(){
 	getAllTags();
 	getAllLinks();
@@ -172,7 +172,7 @@ function setMessageUsingDOM(user)
 //document.getElementById("tables").addEventListener("click", function(e) {
 //	tablesclick();
 //});
-$('#tables').on('click', tablesclick())
+//$('#tables').on('click', tablesclick())
 function tablesclick() {
 	console.log("tables clicked");
 	pullfromtable("deal", "");
