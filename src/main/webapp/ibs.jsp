@@ -67,23 +67,42 @@ function pullfromtable(){
 			console.log(result);
 			//var names = new Array();
 			var ctx = document.getElementById("myBarChart");
+			var sell = new Array();
+			var buy = new Array();
+			var names = new Array();
+			for(var x = 0; x < result.length; x++){
+				if (x%2 == 0){
+					names.push(result[x][0]);
+				}
+				if (result[x][1] === "B" ) {
+					buy.push(result[x][2]);
+				}
+				else if (result[x][1] === "S") {
+					sell.push(result[x][2]);
+				}
+			}
+			
+			/* console.log("names " + names);
+			console.log("buy" + buy);
+			console.log("sell" + sell); */
+			
 			var myLineChart = new Chart(ctx, {
 			  type: 'bar',
 			  data: {
-			    labels: ["Astronomica", "Deuteronic", "Floral", "Galactic","Celestrial","Heliosphere","Jupiter","Interstella","Koronis","Eclipse","Borealis","Lunatic"],
+			    labels: names,//["Astronomica", "Deuteronic", "Floral", "Galactic","Celestrial","Heliosphere","Jupiter","Interstella","Koronis","Eclipse","Borealis","Lunatic"],
 			    datasets: [{
 			      label: "Total Sell",
 			      backgroundColor: "rgba(2,117,216,1)",
 			      borderColor: "rgba(2,117,216,1)",
 			      // This needs to be set up so that it uses data from database
-			      data: [4440, 5312, 6251, 7841, 9821, 6984,1000,4000,3000,4200,9000,1500],
+			      data: sell//[4440, 5312, 6251, 7841, 9821, 6984,1000,4000,3000,4200,9000,1500],
 			    },
 			    {
-			      label: "Total Short Position",
+			      label: "Total buy",
 			      backgroundColor: "rgba(100,217,216,1)",
 			      borderColor: "rgba(100,117,216,1)",
 			      // This needs to be set up so that it uses data from database
-			      data: [8840, 5312, 6251, 7841, 9821, 6984,1000,4000,3000,4200,9000,1500],
+			      data: buy//[8840, 5312, 6251, 7841, 9821, 6984,1000,4000,3000,4200,9000,1500],
 			    }
 			  
 			  ],
@@ -99,14 +118,14 @@ function pullfromtable(){
 			          display: false
 			        },
 			        ticks: {
-			          maxTicksLimit: 12
+			          maxTicksLimit: 14
 			        }
 			      }],
 			      yAxes: [{
 			        ticks: {
 			          min: 0,
-			          max: 12000,
-			          maxTicksLimit: 5
+			          max: 110000000,
+			          maxTicksLimit: 20
 			        },
 			    //    stacked: true,
 			        gridLines: {

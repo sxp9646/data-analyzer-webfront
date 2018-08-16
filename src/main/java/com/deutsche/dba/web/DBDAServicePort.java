@@ -66,6 +66,7 @@ public class DBDAServicePort implements IDBDAServicePort {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("connection made");
 		return true;
 
 	}
@@ -219,7 +220,7 @@ public class DBDAServicePort implements IDBDAServicePort {
 		 initialization();
 
 		// String result = userController.verifyLoginDetails(con, usr, pwd);
-		System.out.println("table info called ");
+		System.out.println("IBS info called " + con);
 		Statement stmt = con.createStatement();
 		
 		ArrayList<ArrayList<String>> table = correlationDealInstr(stmt);
