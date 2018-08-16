@@ -28,12 +28,12 @@
 
   </head>
 
-  <body id="page-top">
+  <body id="page-top" style="zoom:125%;">
   <!--  blabla -->
   
-	      <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+	      <nav class="navbar navbar-expand navbar-dark bg-dark static-top" style="margin-bottom: 0px; border-radius: 0px;">
 	
-	      <a class="navbar-brand mr-1" href="index.jsp">dbIS</a>
+	      <a class="navbar-brand mr-1" style="font-size:17px" href="index.jsp" >dbIS</a>
 	
 	
 	
@@ -46,7 +46,7 @@
 	  <div id="wrapper">
 
       <!-- Sidebar -->
-      <ul class="sidebar navbar-nav">
+      <ul class="sidebar navbar-nav" style="font-size: 20px;">
       
         <li class="nav-item">
           <a class="nav-link" href="index.jsp">
