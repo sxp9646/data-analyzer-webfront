@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Tables</title>
+    <title>Tables</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -26,14 +26,31 @@
     <!-- Custom styles for this template-->
     <link href="dbanalyzer/css/sb-admin.css" rel="stylesheet">
 
+    <!-- Bootstrap core JavaScript-->
+    <script src="dbanalyzer/vendor/jquery/jquery.min.js"></script>
+    <script src="dbanalyzer/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="dbanalyzer/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="dbanalyzer/vendor/datatables/jquery.dataTables.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="dbanalyzer/js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="dbanalyzer/js/demo/datatables-demo.js"></script>
+    
+
   </head>
 
   <body id="page-top" style="zoom:125%;">
   <!--  blabla -->
   
-	      <nav class="navbar navbar-expand navbar-dark bg-dark static-top" style="margin-bottom: 0px; border-radius: 0px;">
+	      <nav class="navbar navbar-expand navbar-dark bg-dark static-top"  style="margin-bottom: 0px; border-radius: 0px; height: 12px;">
 	
-	      <a class="navbar-brand mr-1" style="font-size:17px" href="index.jsp" >dbIS</a>
+	      <a class="navbar-brand mr-1" style="font-size:17px; padding:12px;" href="index.jsp" >dbIS</a>
 	
 	
 	
@@ -46,10 +63,10 @@
 	  <div id="wrapper">
 
       <!-- Sidebar -->
-      <ul class="sidebar navbar-nav" style="font-size: 20px;">
+      <ul class="sidebar navbar-nav" style="font-size: 20px; padding:10px;">
       
         <li class="nav-item">
-          <a class="nav-link" href="index.jsp">
+          <a class="nav-link" href="markets.jsp">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Markets</span>
           </a>
@@ -105,7 +122,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © Your Website 2018</span>
+              <span>Copyright © Deutsche Bank 2018</span>
             </div>
           </div>
         </footer>
@@ -125,24 +142,6 @@
     </a>
 
   
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="dbanalyzer/vendor/jquery/jquery.min.js"></script>
-    <script src="dbanalyzer/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="dbanalyzer/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Page level plugin JavaScript-->
-    <script src="dbanalyzer/vendor/datatables/jquery.dataTables.js"></script>
-    <script src="dbanalyzer/vendor/datatables/dataTables.bootstrap4.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="dbanalyzer/js/sb-admin.min.js"></script>
-
-    <!-- Demo scripts for this page-->
-    <script src="dbanalyzer/js/demo/datatables-demo.js"></script>
-    
               <script>
            // $(document).ready(function() {
         	   var rootURL = "rws/services";
@@ -159,13 +158,31 @@
             			dataType: "json", // data type of response
             			data: data1,
             	                
-            			success: function (result) {
-            						console.log('hello world');
-            						console.log(result);   
-            						var table_data = '';
+            			success: function (result) {  
+            					
+            					 var data = [];
+							        for ( var i=0 ; i<100000 ; i++ ){
+							        	data.push( [
+							            	'<td>' + result[i][0] +  '</td>',
+							            	'<td>' + result[i][1] +  '</td>',
+							            	'<td>' + result[i][2] +  '</td>',
+							            	'<td>' + result[i][3] +  '</td>',
+							            	'<td>' + result[i][4] +  '</td>',
+							            	'<td>' + result[i][5] +  '</td>',
+							            	'<td>' + result[i][6] +  '</td>', 
+							            	] ); 
+							        }
+							        console.log(data);
+							        $('#data_table').DataTable({
+							        	data:           data,
+							        	deferRender:    false,
+							        	scrollY:        200,
+							        	scrollCollapse: false,
+							        	scroller:       false
+							            } ); 
+            						/* var table_data = '';
             		                $.each(result, function(key, value) {
-            		                  // console.log(key);
-            						          //console.log(value);
+            		              
             		                  table_data += '<tr>';
             		                  table_data += '<td>' + value[0] +  '</td>';
             		                  table_data += '<td>' + value[1] +  '</td>';
@@ -175,8 +192,9 @@
             		                  table_data += '<td>' + value[5] +  '</td>';
             		                  table_data += '<td>' + value[6] +  '</td>';
             						          table_data += '</tr>';
-            		                });
-            		            $('#data_table').append(table_data).DataTable();
+            		                }); */
+            		            //$('#data_table').append(table_data).DataTable();
+            		            
             		           
             		              }
             		            

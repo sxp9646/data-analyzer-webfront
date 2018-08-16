@@ -119,7 +119,7 @@ function loginFromForm() {
                 
 		success: function ( result) {
 					console.log(result);
-					window.location.replace("http://localhost:8080/dbanalyzer/charts.jsp");
+					window.location.replace("http://localhost:8080/dbanalyzer/markets.jsp");
 					
                     setMessageUsingDOM(result );
                     //$( "#userIdMessage" ).append("<p class='text-success'>You have successfully logged onto the server</p>");

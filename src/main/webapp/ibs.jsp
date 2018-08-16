@@ -124,7 +124,7 @@ function pullfromtable(){
 			      yAxes: [{
 			        ticks: {
 			          min: 0,
-			          max: 110000000,
+			          max: 30000000000,
 			          maxTicksLimit: 20
 			        },
 			    //    stacked: true,

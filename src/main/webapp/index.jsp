@@ -19,11 +19,11 @@
 </head>
 <body>
 
-	<img src="dbanalyzer/js/db.gif" alt="DB Icon" style="width:128px;height:128px;" id = "dbimage">
+	<img src="dbanalyzer/js/db.png" alt="DB Icon" style="width:128px;height:128px;" id = "dbimage">
 
 	<!-- Form required for User Login  -->
 	<div class="login">
-		<h1>dbRobinhood Login</h1>
+		<h1>dbIS Login</h1>
 	    <form method="post" action="" id="loginForm">
 	    	<input type="text" id="username" name="usr" placeholder="Username" required="required" />
 	        <input type="password" id="password" name="pwd" placeholder="Password" required="required" />

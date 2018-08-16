@@ -69,22 +69,13 @@
 
 
           <!-- Area Chart Example-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fas fa-chart-area"></i>
-              Portfolio Value</div>
-            <div class="card-body">
-              <canvas id="myAreaChart" width="100%" height="30"></canvas>
-            </div>
-        
-          </div>
 
           <div class="row">
             <div class="col-lg-8">
               <div class="card mb-3">
                 <div class="card-header">
                   <i class="fas fa-chart-bar"></i>
-                  Portfolio Composition </div>
+                  Instrument vs Buy | Sell</div>
                 <div class="card-body">
                   <canvas id="myBarChart" width="100%" height="50"></canvas>
                 </div>
@@ -95,7 +86,7 @@
               <div class="card mb-3">
                 <div class="card-header">
                   <i class="fas fa-chart-pie"></i>
-                  Investor Sentiment </div>
+                  Buy | Sell Split </div>
                 <div class="card-body">
                   <canvas id="myPieChart" width="100%" height="100"></canvas>
                 </div>
@@ -162,7 +153,8 @@
 
     <!-- Demo scripts for this page-->
     <script src="dbanalyzer/js/demo/chart-area-demo.js"></script>
-    <script src="dbanalyzer/js/demo/chart-bar-demo.js"></script>
+    <!-- <script src="dbanalyzer/js/demo/chart-bar-demo.js"></script> -->
+    <script src="dbanalyzer/js/barchart.js"></script>
     <script src="dbanalyzer/js/demo/chart-pie-demo.js"></script>
 
   </body>

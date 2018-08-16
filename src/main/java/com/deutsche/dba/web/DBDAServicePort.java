@@ -45,11 +45,11 @@ public class DBDAServicePort implements IDBDAServicePort {
 
 	private final static String DBDRIVER = "com.mysql.cj.jdbc.Driver";
 	private final static String DBDRIVER2 = "com.mysql.jdbc.Driver";
-	private final static String DBPATH = "jdbc:mysql://localhost:3307/";
-	private final static String DBNAME = "mysql";
-	private final static String DBUSER = "root";
-	private final static String DBPWD = "ppp";
-	private static final String SCHEMANAME = "db_grad_1917.";
+	private final static String DBPATH = "jdbc:mysql://10.11.32.21:3306/";// localhost:3307/"; 10.11.32.21:3306/
+	private final static String DBNAME ="db_grad_cs_1917";// "mysql"; //db_grad_cs_1917.
+	private final static String DBUSER = "dbgrad";//"root"; //dbgrad
+	private final static String DBPWD = "dbgrad";//"ppp"; //dbgrad
+	private static final String SCHEMANAME = "db_grad_cs_1917.";//"db_grad_1917."; //db_grad_cs_1917.
 	private Connection con = null;
 	private static PreparedStatement stmt;
 

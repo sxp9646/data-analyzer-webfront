@@ -8,9 +8,9 @@ var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
   type: 'pie',
   data: {
-    labels: ["Long","Short"],
+    labels: ["Buy","Sell"],
     datasets: [{
-      data: [42,58],
+      data: [96,84],
       backgroundColor: ['#007bff', '#dc3545'],
     }],
   },
